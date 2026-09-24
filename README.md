@@ -9,7 +9,7 @@ A single patch for Unsloth's llama.cpp fork. GLM-5.3 isn't in llama.cpp master y
 [`unslothai/llama.cpp`](https://github.com/unslothai/llama.cpp), branch `glm5next/upstream`, commit
 `86ebfef2c6a0f3359a2a07d2c215d61b0fa885c9`.
 
-The model (UD-IQ4_XS, 148 GB) is more than twice the RAM. Instead of letting mmap thrash the page cache,
+The model (UD-IQ4_XS, 157 GB / 146 GiB) is more than twice the RAM. Instead of letting mmap thrash the page cache,
 the routed experts are streamed from two NVMe SSDs.
 
 ## What's in the patch
@@ -44,7 +44,7 @@ an open PR upstream). This provides the core: an expert cache with O_DIRECT read
 - Ryzen 7 9800X3D, 64 GB DDR5, RTX 5090 32 GB
 - Crucial T700 4 TB (PCIe 5.0, LUKS-encrypted) holding the model, Kingston 4 TB (PCIe 4.0, unencrypted) holding the mirror copy
 - Linux (Pop!_OS, kernel 7.1), NVIDIA driver 580.173, CUDA 13.0
-- Model: Unsloth GLM-5.3-Flash UD-IQ4_XS (5 shards, 148 GB)
+- Model: Unsloth GLM-5.3-Flash UD-IQ4_XS (5 shards, 157 GB / 146 GiB)
 
 ## Build
 
